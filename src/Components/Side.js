@@ -3,9 +3,11 @@ import { useLocalContext } from '../Context/Context';
 import img from '../assets/Group 19.png';
 import img2 from '../assets/Group 18.png';
 import img3 from '../assets/Group 20.png';
+import { useHistory } from 'react-router-dom';
 import './side.css';
 const Side = ({ loggedInUser, isTeacher, logout }) => {
 	console.log(isTeacher);
+	const history = useHistory();
 	return (
 		<div className='side'>
 			<div className='boxinside'>
@@ -21,7 +23,13 @@ const Side = ({ loggedInUser, isTeacher, logout }) => {
 					</div>
 				</div>
 				<div>
-					<img src={img2} className='btn' />
+					<img
+						src={img2}
+						className='btn'
+						onClick={() => {
+							history.push('/home');
+						}}
+					/>
 					<br />
 					<br />
 					<br />

@@ -5,6 +5,7 @@ import { useLocalContext } from './Context/Context';
 import RouteHandler from './Route/RouteHandler';
 import Register from './Pages/Register';
 import Home from './Pages/Home';
+import Class from './Pages/Class';
 function App() {
 	const { loggedInUser, logout } = useLocalContext();
 	console.log(!!loggedInUser);
@@ -20,6 +21,10 @@ function App() {
 				<Route path='/home' exact>
 					<Home />
 				</Route>
+				<Route
+					path='/class/:id'
+					render={({ match }) => <Class match={match} />}
+				></Route>
 			</Switch>
 		</Router>
 	);

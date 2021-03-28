@@ -11,6 +11,8 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
-
+provider.setCustomParameters({
+	prompt: 'select_account',
+});
 export { auth, provider };
 export default db;
