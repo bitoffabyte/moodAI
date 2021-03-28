@@ -6,9 +6,11 @@ import RouteHandler from './Route/RouteHandler';
 import Register from './Pages/Register';
 import Home from './Pages/Home';
 import Class from './Pages/Class';
+
 function App() {
 	const { loggedInUser, logout } = useLocalContext();
 	console.log(!!loggedInUser);
+
 	return (
 		<Router className='App'>
 			<Switch>

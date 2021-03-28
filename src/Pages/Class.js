@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Side from '../Components/Side';
 import db from '../config';
@@ -6,6 +6,7 @@ import { useLocalContext } from '../Context/Context';
 import './Class.css';
 import { useHistory } from 'react-router-dom';
 import StudentMon from '../Components/StudentMon';
+import TeacherData from '../Components/TeacherData';
 const Class = ({ match }) => {
 	const id = match.params.id;
 	// alert(id);
@@ -24,7 +25,8 @@ const Class = ({ match }) => {
 		if (loggedInMail)
 			db.collection('Users')
 				.doc(loggedInMail)
-				.onSnapshot((snap) => {
+				.get()
+				.then((snap) => {
 					if (snap.exists) {
 						setIsTeacher(snap.data().isTeacher);
 					}
@@ -33,7 +35,8 @@ const Class = ({ match }) => {
 	useEffect(() => {
 		db.collection('Classes')
 			.doc(id)
-			.onSnapshot((snap) => {
+			.get()
+			.then((snap) => {
 				setClassDets(snap.data());
 			});
 	});
@@ -53,11 +56,15 @@ const Class = ({ match }) => {
 					<p>{classDets.name}</p>
 				</div>
 				<div className='bod'>
-					{isTeacher ? null : <StudentMon></StudentMon>}
+					{isTeacher ? (
+						<TeacherData id={id} />
+					) : (
+						<StudentMon id={id}></StudentMon>
+					)}
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default Class;
+export default React.memo(Class);

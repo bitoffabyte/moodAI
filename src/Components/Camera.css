@@ -1,0 +1,10 @@
+#videoContainer {
+	width: 10%;
+}
+
+#videoCanvas {
+	position: absolute;
+}
+
+#video {
+}
