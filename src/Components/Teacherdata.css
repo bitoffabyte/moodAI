@@ -1,0 +1,33 @@
+.sdsds {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	overflow: auto;
+	height: 100%;
+}
+.buttons {
+	width: 60%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: auto;
+}
+.data {
+	width: 80%;
+	height: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.boix {
+	width: 20%;
+	height: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #c9ddf5;
+	border-radius: 15px;
+	flex-direction: column;
+}

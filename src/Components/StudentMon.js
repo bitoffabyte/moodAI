@@ -6,7 +6,7 @@ import './studentmon.css';
 const StudentMon = ({ id }) => {
 	const [show, setShow] = useState(false);
 	return (
-		<div>
+		<div style={{ marginLeft: '5%' }}>
 			<Checkbox
 				checked={show}
 				onChange={() => setShow((prev) => !prev)}
