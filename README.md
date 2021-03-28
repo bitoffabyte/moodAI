@@ -35,7 +35,7 @@ ensure maximum retention by the students.
 
 </ul>
 <br/>
-### To Do's
+### To Do
 
 - Use electronjs to make a native app
 - Use react Native to get a native app 
