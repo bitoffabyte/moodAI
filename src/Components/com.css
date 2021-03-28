@@ -1,0 +1,46 @@
+.com {
+	width: 80%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+.ddd {
+	display: flex;
+	height: 100vh;
+	flex: 0.67;
+	align-items: center;
+	justify-content: center;
+}
+.head {
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.mc {
+	font-family: 'Roboto';
+	font-style: bold;
+	font-weight: 500;
+	font-size: 1.5vw;
+	margin: 0;
+}
+.nc {
+	margin: 0;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 1vw;
+	cursor: pointer;
+	color: #e44579;
+	transition: all 0.5s ease;
+}
+.nc:hover {
+	transform: scale(1.2) translateY(-10%);
+	transition: all 0.5s ease;
+}
+.classes {
+	height: 80%;
+	width: 80%;
+}

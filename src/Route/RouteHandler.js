@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useLocalContext } from '../Context/Context';
+import { useHistory } from 'react-router-dom';
+
 import db from '../config';
+import Landing from '../Pages/Landing';
 const RouteHandler = () => {
+	const history = useHistory();
+
 	const { loggedInMail } = useLocalContext();
 	const [createdClasses, setCreatedClasses] = useState([]);
-
 	useEffect(() => {
-		const unSubscribe = db
-			.collection('Users')
+		db.collection('Users')
 			.doc(loggedInMail)
 			.get()
 			.then((snap) => {
 				if (snap.exists) {
-					alert('exists');
+					history.push('/home');
 				} else {
-					alert('dosen not');
+					history.push('/reg');
 				}
 			});
 	}, []);
-	return <div>{loggedInMail}</div>;
+	return <Landing />;
 };
 
 export default RouteHandler;
