@@ -81,15 +81,13 @@ export const Camera = ({ id }) => {
 
 	useEffect(() => {
 		Promise.all([
-			faceapi.nets.tinyYolov2.loadFromUri('%PUBLIC_URL%/models'),
-			faceapi.nets.tinyFaceDetector.loadFromUri('%PUBLIC_URL%/models'),
-			faceapi.nets.faceLandmark68Net.loadFromUri('%PUBLIC_URL%/models'),
-			faceapi.nets.faceLandmark68TinyNet.loadFromUri(
-				'%PUBLIC_URL%/models'
-			),
-			faceapi.nets.faceRecognitionNet.loadFromUri('%PUBLIC_URL%/models'),
-			faceapi.nets.faceExpressionNet.loadFromUri('%PUBLIC_URL%/models'),
-			faceapi.nets.ageGenderNet.loadFromUri('%PUBLIC_URL%/models'),
+			faceapi.nets.tinyYolov2.loadFromUri('/models'),
+			faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+			faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+			faceapi.nets.faceLandmark68TinyNet.loadFromUri('/models'),
+			faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+			faceapi.nets.faceExpressionNet.loadFromUri('/models'),
+			faceapi.nets.ageGenderNet.loadFromUri('/models'),
 		]).then(setState(true));
 	}, []);
 

@@ -57,11 +57,9 @@ const Class = ({ match }) => {
 				</div>
 				<div className='bod'>
 					{isTeacher ? (
-						<></>
+						<TeacherData id={id} />
 					) : (
-						// <TeacherData id={id} />
-						<></>
-						// <StudentMon id={id}></StudentMon>
+						<StudentMon id={id}></StudentMon>
 					)}
 				</div>
 			</div>
